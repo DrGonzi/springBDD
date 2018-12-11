@@ -37,9 +37,15 @@ public class Outputter implements CommandLineRunner {
         LOG.info(fighter2 + " has been created !");
         fighterRepository.save(fighter2);
         LOG.info(fighter2 + " has been saved !");
-
         
-        Fighter tempFighter = fighterRepository.findById(2L).get(); 
+        
+        LOG.info("******************");
+        LOG.info(fighter2 + " will be modified !");
+        fighter2.setName("Ken");
+        fighterRepository.save(fighter2);
+        LOG.info(fighter2 + " has been saved !");
+        
+        Fighter tempFighter = fighterRepository.findById(8L).get(); 
         
         LOG.info("******************");
         LOG.info("Second Fighter's Name is " + tempFighter.getName());
@@ -54,7 +60,7 @@ public class Outputter implements CommandLineRunner {
         };
         
         
-        fighterRepository.deleteById(2L); 
+        fighterRepository.deleteById(8L); 
 
 
         LOG.info("******************");
